@@ -1,0 +1,13 @@
+#content{
+    margin-top: 20vh;
+    text-align: center;
+}
+
+#send{
+    margin-bottom: 2vh;
+}
+
+p{
+    max-width: 500px;
+    margin: 2vh auto;
+}

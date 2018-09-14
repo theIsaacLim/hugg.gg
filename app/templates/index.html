@@ -1,0 +1,17 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='base.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
+    <title>Hugg!</title>
+</head>
+
+
+<body>
+    <div id="content">
+        <h1 id="huge">hugg.gg</h1>
+        <h2 id="send">sometimes, people just need huggs.</h2>
+        <a class="button" href="{{ url_for('send') }}">send a hugg</a>
+        <p>a project by isaac lim</p>
+    </div>
+</body>

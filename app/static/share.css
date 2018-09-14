@@ -1,0 +1,23 @@
+#content{
+    margin-top: 20vh;
+    text-align: center;
+}
+
+#url{
+    margin-bottom: 2vh;
+}
+
+p{
+    max-width: 500px;
+    margin: 2vh auto;
+}
+
+#huge{
+    font-size: 3em;
+}
+
+.button{
+    display: block;
+    width: 40vw;
+    margin-bottom: 2vh;
+}

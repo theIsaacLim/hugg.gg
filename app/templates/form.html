@@ -1,0 +1,16 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='base.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='form.css') }}">
+    <script src="{{ url_for('static', filename='form.js') }}"></script>
+    <title>Send a Hugg!</title>
+</head>
+
+<body>
+    <form name="hug" method="post">
+        <input type="text" onChange="reactingSubmitButton()" name="message" id="say" placeholder="Say Something?">
+        <input type="submit" class="button" placeholder="text" method="post" value="Send Quiet Hugg" id="send">
+        <p style="text-align:center;">a project by isaac lim</p>
+    </form>
+</body>

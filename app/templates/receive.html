@@ -1,0 +1,20 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='base.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
+    <title>Hugg!</title>
+</head>
+
+<body>
+    <div id="content">
+        <h1 id="huge">hugg!</h1>
+        {% if message %}
+        <h2 id="send">{{ message }}</h2>
+        {% else %}
+        <h2 id="send"> you just received the fuzzy warmth of a hugg.</h2>
+        {% endif %}
+        <a class="button" href="{{ url_for('send') }}">send a hugg back</a>
+        <p>a project by isaac lim</p>
+    </div>
+</body>

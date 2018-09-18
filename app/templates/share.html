@@ -5,22 +5,25 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='share.css') }}">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     <title>Hugg!</title>
+    <script>
+    const copyToClipboard = str => {
+        const el = document.createElement('textarea');
+        el.value = "{{ url }}";
+        document.body.appendChild(el);
+        el.select();
+        document.execCommand('copy');
+        document.body.removeChild(el);
+    };
+    </script>
 </head>
 
 <body>
     <div id="content">
         <h1 id="huge">share the warmth!</h1>
         <h2 id="url">{{ url }}</h2>
-        <a class="button" href=""><i class="fas fa-copy"></i></a>
-        <a class="button" href="mailto:?&subject=I've got a surprise for you&body=I've%20got%20a%20little%20surprise%20for%20you%20that%20I%20think%20you'll%20find%20quite%20warm%0A%7B%7B%20url%20%7D%7D"><i class="fas fa-envelope"></i></a>
-        <a class="button" href="https://twitter.com/home?status=I've%20got%20a%20surprise%20for%20you%20at%20%7B%7B%20url%20%7D%7D"><i class="fab fa-twitter"></i></a>
+        <a class="button" onclick="copyToClipboard()"><i class="fas fa-copy"></i></a>
+        <a class="button" href="mailto:?&subject=I've got a surprise for you&body=I've%20got%20a%20little%20surprise%20for%20you%20that%20I%20think%20you'll%20find%20quite%20warm%0A{{ url }}"><i class="fas fa-envelope"></i></a>
+        <a class="button" href="https://twitter.com/home?status=I've%20got%20a%20surprise%20for%20you%20at%20%{{ url }}"><i class="fab fa-twitter"></i></a>
         <p>a project by isaac lim</p>
     </div>
 </body>
-function copyToClipboard(element) {
-  var $temp = $("<input>");
-  $("body").append($temp);
-  $temp.val($(element).text()).select();
-  document.execCommand("copy");
-  $temp.remove();
-}

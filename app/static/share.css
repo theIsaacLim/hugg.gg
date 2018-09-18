@@ -5,15 +5,12 @@
 
 #url{
     margin-bottom: 2vh;
+    font-family: 'Muli';
 }
 
 p{
     max-width: 500px;
     margin: 2vh auto;
-}
-
-#huge{
-    font-size: 3em;
 }
 
 .button{

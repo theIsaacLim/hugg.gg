@@ -10,10 +10,9 @@
     <div id="content">
         <h1 id="huge">hugg!</h1>
         {% if message %}
-        <h2 id="send">{{ message }}</h2>
-        {% else %}
-        <h2 id="send"> you just received the fuzzy warmth of a hugg.</h2>
+        <h2 id="send" class="bubble">{{ message }}</h2>
         {% endif %}
+        <h2 id="send"> you just received the fuzzy warmth of a hugg.</h2>
         <a class="button" href="{{ url_for('send') }}">send a hugg back</a>
         <p>a project by isaac lim</p>
     </div>

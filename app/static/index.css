@@ -11,3 +11,20 @@ p{
     max-width: 500px;
     margin: 2vh auto;
 }
+
+
+.bubble{
+    text-decoration: none;
+    font-family: 'Muli';
+    font-size: 3vh;
+    background-color: var(--white);
+    color: var(--black);
+    padding: 5vh 5vw 5vh 5vw;
+    display: table;
+    border-radius: 5vw;
+    border: .5vh solid var(--white);
+    transition: .5s;
+    margin: 0 auto;
+    user-select: none;
+    margin-bottom: 5vh;
+}

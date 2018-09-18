@@ -27,7 +27,7 @@ def send():
 
 @app.route('/share/<num>')
 def share(num):
-    return render_template("share.html", url="hugg.gg" + url_for('receive', num=int(num, 0)))
+    return render_template("share.html", url="hugg-gg.herokuapp.com" + url_for('receive', num=int(num, 0)))
 
 
 @app.route('/receive/<num>')

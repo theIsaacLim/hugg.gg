@@ -20,14 +20,14 @@ def index():
 def send():
     if request.method == 'POST':
         message = request.values.get('message')
-        return redirect(url_for('share', num=add_newrl(message)))
+        return redirect(url_for('share', num=hex(add_newrl(message))))
     else:
         return render_template("form.html")
 
 
 @app.route('/share/<num>')
 def share(num):
-    return render_template("share.html", url="hugg.gg" + url_for('receive', num=hex(int(num))))
+    return render_template("share.html", url="hugg.gg" + url_for('receive', num=int(num, 0)))
 
 
 @app.route('/receive/<num>')
@@ -41,8 +41,6 @@ def receive(num):
         url_data = get_existing_url(url_id)
     except TypeError:
         abort(404)
-
-    print(url_data)
     try:
         return render_template("receive.html", message=url_data["message"])
     except KeyError:

@@ -1,23 +1,18 @@
-from time import time
-urls = [{'num': 0,
-         'date': time()+30.0}]
+urls = [{'num': 0}]
 
 
 def generate_newrl():
     global urls
-    for num in urls:
-        if num != urls.index(num):
-            print("a")
-            return urls.index(num)
-    print("b")
-    return urls[-1] + 1
+    for url in urls:
+        if url['num'] != urls.index(url):
+            return urls.index(url)
+    return urls[-1]['num'] + 1
 
 
 def add_newrl(message=None):
     global urls
     num = generate_newrl()
     urls.append({'num': num,
-                 'date': time()+86400,
                  'message': message})
     return num
 

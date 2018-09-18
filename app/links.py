@@ -20,5 +20,7 @@ def add_newrl(message=None):
 def get_existing_url(num):
     global urls
     url_data = next(item for item in urls if item["num"] == num)
-    urls = urls.remove(url_data)
+    print(urls)
+    urls.remove(url_data)
+    print(urls)
     return url_data

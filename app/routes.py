@@ -39,7 +39,7 @@ def receive(num):
 
     try:
         url_data = get_existing_url(url_id)
-    except TypeError:
+    except StopIteration:
         abort(404)
     try:
         return render_template("receive.html", message=url_data["message"])

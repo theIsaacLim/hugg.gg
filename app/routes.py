@@ -3,6 +3,7 @@ from flask import render_template, flash, redirect, url_for, request, abort, sen
 from app import app
 from app.links import *
 import os
+domain = "hugg-gg.herokuapp.com"
 
 
 @app.route('/favicon.ico')
@@ -20,6 +21,8 @@ def index():
 def send():
     if request.method == 'POST':
         message = request.values.get('message')
+        if message is '':
+            return redirect(url_for('sendSilent'))
         return redirect(url_for('share', num=hex(add_newrl(message))))
     else:
         return render_template("form.html")
@@ -27,7 +30,17 @@ def send():
 
 @app.route('/share/<num>')
 def share(num):
-    return render_template("share.html", url="hugg-gg.herokuapp.com" + url_for('receive', num=int(num, 0)))
+    return render_template("share.html", url=domain + url_for('receive', num=int(num, 0)))
+
+
+@app.route('/share/s')
+def sendSilent():
+    return render_template('share.html', url=domain + url_for('receiveSilent'))
+
+
+@app.route('/receive/s')
+def receiveSilent():
+    return render_template('receive.html')
 
 
 @app.route('/receive/<num>')

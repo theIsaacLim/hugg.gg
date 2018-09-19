@@ -12,6 +12,8 @@ html{
     height: 100%;
     background-color: var(--color1);
     background: var(--color1gradient);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 #content{

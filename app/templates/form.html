@@ -8,10 +8,12 @@
 </head>
 
 <body>
-    <form name="hug" method="post">
+    <form id="hug" action="" method="post" novalidate>
         <h2 id="huge">say something?</h2>
-        <input type="text" onChange="reactingSubmitButton()" name="message" id="say" placeholder="Say Something? ">
-        <input type="submit" class="button" placeholder="text" method="post" value="Send Quiet Hugg" id="send">
-        <p style="text-align:center;">a project by isaac lim</p>
+        {{ form.hidden_tag() }}
+        {{ form.message(**{'onChange':"reactingSubmitButton()", 'id':"say", 'placeholder':"Say Something?"}) }}
+        <br>
+
+        {{ form.submit(id="send", class="button") }}
     </form>
 </body>

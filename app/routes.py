@@ -2,6 +2,7 @@
 from flask import render_template, flash, redirect, url_for, request, abort, send_from_directory
 from app import app
 from app.links import *
+from app.forms import *
 import os
 domain = "hugg-gg.herokuapp.com"
 
@@ -19,13 +20,17 @@ def index():
 
 @app.route('/send', methods=["GET", "POST"])
 def send():
-    if request.method == 'POST':
-        message = request.values.get('message')
+    form = hug()
+
+    # If form submitted and valid
+    if form.validate_on_submit():
+        message = form.message.data
+        print(message)
         if message is '':
             return redirect(url_for('sendSilent'))
         return redirect(url_for('share', num=hex(add_newrl(message))))
     else:
-        return render_template("form.html")
+        return render_template("form.html", form=form)
 
 
 @app.route('/share/<num>')

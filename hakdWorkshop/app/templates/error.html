@@ -1,0 +1,17 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='base.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='error.css') }}">
+    <script src="./form.js"></script>
+    <title>Send a Hugg!</title>
+</head>
+
+<body>
+    <div id="content">
+        <h1 id="huge">404</h1>
+        <h2>We can't seem to find your hugg. Maybe the hugg has expired or the hugg has been received already</h2>
+        <a class="button" href="{{ url_for('send') }}">Send a Hugg</a>
+        <p style="text-align:center;">a project by isaac lim</p>
+    </div>
+</body>

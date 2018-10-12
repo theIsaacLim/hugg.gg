@@ -1,0 +1,19 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='base.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='form.css') }}">
+    <script src="{{ url_for('static', filename='form.js') }}"></script>
+    <title>Send a Hugg!</title>
+</head>
+
+<body>
+    <form id="hug" action="" method="post" novalidate>
+        <h2 id="huge">say something?</h2>
+        {{ form.hidden_tag() }}
+        {{ form.message(**{'onChange':"reactingSubmitButton()", 'id':"say", 'placeholder':"Say Something?"}) }}
+        <br>
+
+        {{ form.submit(id="send", class="button") }}
+    </form>
+</body>

@@ -1,0 +1,41 @@
+form{
+    margin-top: 30vh;
+}
+
+
+input[type='text']{
+    text-decoration: none;
+    font-family: 'Muli';
+    font-size: 3vh;
+    background-color: var(--white);
+    color: var(--black);
+    padding: 5vh 5vw 5vh 5vw;
+    display: table;
+    border-radius: 5vw;
+    border: .5vh solid var(--white);
+    transition: .5s;
+    margin: 0 auto;
+    user-select: none;
+    margin-bottom: 5vh;
+}
+
+input[type='text']:focus{
+    color: var(--color1);
+    transition: .3s;
+    outline: 0;
+    border: .5vh solid var(--color1);
+}
+
+
+.button{
+    border-color: var(--white);
+    color: var(--white);
+    background: transparent;
+}
+
+.button:hover{
+    border-color: var(--white);
+    color: var(--color1);
+    background: var(--white);
+    cursor:pointer;
+}

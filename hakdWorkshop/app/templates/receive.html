@@ -1,0 +1,26 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='base.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+      (adsbygoogle = window.adsbygoogle || []).push({
+        google_ad_client: "ca-pub-4015412114193086",
+        enable_page_level_ads: true
+      });
+    </script>
+    <title>Hugg!</title>
+</head>
+
+<body>
+    <div id="content">
+        <h1 id="huge">hugg!</h1>
+        {% if message %}
+        <h2 id="send" class="bubble">{{ message }}</h2>
+        {% endif %}
+        <h2 id="send"> you just received the fuzzy warmth of a hugg.</h2>
+        <a class="button" href="{{ url_for('send') }}">send a hugg back</a>
+        <p>a project by isaac lim</p>
+    </div>
+</body>

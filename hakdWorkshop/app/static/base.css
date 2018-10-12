@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css?family=Muli:800|Roboto:300');
+
+:root{
+    --white: #eff;
+    --black: #033;
+    --color1: #fc4a1a; /* fallback for old browsers */
+    --color1gradient:linear-gradient(150deg, #fc4a1a, #f7b733); /* Chrome 10-25, Safari 5.1-6 */
+}
+
+html{
+    padding:0;margin:0vh;
+    height: 100%;
+    background-color: var(--color1);
+    background: var(--color1gradient);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+#content{
+    max-width: 1000px;
+    margin: 0 auto;
+    color: var(--white);
+}
+
+h1{
+    font-size: 8em;
+    font-family: 'Muli';
+    padding: 0;margin:0;
+}
+
+h2{
+    padding: 0;margin:0;
+    font-size: 2em;
+}
+
+h2,p{
+    font-family: 'Roboto';
+}
+
+.button{
+    text-decoration: none;
+    font-family: 'Muli';
+    font-size: 5vh;
+    background-color: var(--white);
+    color: var(--color1);
+    padding: 1vh 5vw 1vh 5vw;
+    display: table;
+    border-radius: 5vw;
+    border: .5vh solid var(--white);
+    transition: .5s;
+    margin: 0 auto;
+}
+
+.button:hover{
+    transition: .3s;
+    background-color: transparent;
+    color: var(--white);
+}
+
+
+@media screen and (max-width: 480px) {
+  h1 { font-size: 3em; }
+}
+@media screen and (max-width: 640px) {
+  h1 { font-size: 5em; }
+}
+
+#step{
+    font-family: 'Muli';
+    text-align: center;
+}
+
+#huge{
+    font-size: 5em;
+    color: var(--white);
+    font-family: 'Muli';
+    text-align: center;
+    margin-bottom: 1vh;
+}

@@ -34,7 +34,6 @@ def index():
 
 
 
-
 # TODO: Task 2: Look at this function, then build the function below to share for a custom url
 # This is the share function for silent hugs with no message
 @app.route('/share/s')

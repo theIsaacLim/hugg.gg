@@ -19,18 +19,23 @@ def favicon():
                                'favicon.ico', mimetype='image/vnd.microsoft.icon')
 
 
+# TODO: Task 1: Okay your first task is to return the index.html file when the / route is opened
 # This will return receive.html when /receive/s/ is opened
-@app.route('/receive/s')
+@app.route('/receive/s')  # This is a line that basically tells the browser that the function below is what to do when this URL is called
 def receiveSilent():
-    # This is how you return a HTML file to the view.
-    return render_template('receive.html')
+    # This is how you return a HTML file to the view(the browser sees the HTML file)
+    return render_template('receive.html')  # This is a return statement that basically s
 
 
 @app.route('/')
 def index():
-    # TODO: Okay your first task ( return HTML file to the view )-Delete line 28
     pass
-# TODO: Look at this function, then build the function below to share for a custom url
+
+
+
+
+
+# TODO: Task 2: Look at this function, then build the function below to share for a custom url
 # This is the share function for silent hugs with no message
 @app.route('/share/s')
 def sendSilent():
@@ -45,9 +50,13 @@ def share(num):
     # Fill this in based on the share link above
 
 
+
+
+
+# TODO: Task 3: Look at this
+# Note how a number in the url is passed into the function.
 @app.route('/receive/<num>')
 def receive(num):
-    # TODO: Look at this
     """
     You may not have seen this type of statement in your earlier programming. In Python this is called a try/except statement
      but in other languages it goes by different names. Basically, this is how it works:
@@ -62,18 +71,22 @@ def receive(num):
     """
     try:
         url_id = int(num, 0)
-    except ValueError:
+    except ValueError:  # This is if the num variable isn't valid
         abort(404)
 
     try:
         url_data = get_existing_url(url_id)
-    except StopIteration:
+    except StopIteration:  # This is an error that happens if the url doesn't exist
         abort(404)
 
     try:
         return render_template("receive.html", message=url_data["message"])
-    except KeyError:
+    except KeyError:  # This error happens if there is no message
         return render_template("receive.html")
+
+
+
+
 
 
 # TODO: look at this function. This is how you deal with forms, for reference
@@ -95,6 +108,9 @@ def send():
     else:  # Form isn't submitted
         # Render the form
         return render_template("form.html", form=form)
+
+
+
 
 
 # TODO: Look at this
